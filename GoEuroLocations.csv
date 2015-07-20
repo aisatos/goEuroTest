@@ -1,7 +1,7 @@
 _type,_id,name,type,latitude,longitude
-location,375223,Buenos Aires,location,9.17189,-83.33417
-location,391319,Buenos Aires,location,19.0746,-102.18042
-location,394508,Buenos Aires,location,-5.26083,-79.96417
-airport,313816,Buenos Aires Jorge Newburg,airport,-34.55797,-58.41375
-airport,313817,Buenos Aires Ministro Pistarini,airport,-34.82209,-58.52948
+location,393496,Bergen,location,60.39293,5.324579
+location,373033,Berne,location,46.94809,7.44744
+location,460643,Berdyans'k,location,46.7663,36.79882
+airport,314826,Berlin Tegel,airport,52.5548,13.28903
+airport,314827,Berlin Schönefeld,airport,52.388725,13.518087
 null

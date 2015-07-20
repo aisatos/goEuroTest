@@ -1,5 +1,8 @@
 package com.ais.goeuro.service;
 
+import java.io.IOException;
+
+import org.apache.http.client.ClientProtocolException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +16,14 @@ public class GoEuroService {
 		this.locationFetchService = locationFetchService;
 		this.locationFileWritterImpl = locationFileWritterImpl;
 	}
-
+	
+	/**
+	 * Retrieves a Location array from the GoEuro service and outputs to a File
+	 * 
+	 * @param locationName the short name of the location the UI is looking the details for
+	 * @throws IllegalArgumentException when string is null or empty.
+	 * @throws RuntimeException on Connection error.
+	 */
 	public String getLocationsAndWriteToFile(String locationName) {
 		validateInput(locationName);
 		String locationsDetail = getLocationFromHttpClient(locationName);

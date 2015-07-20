@@ -11,7 +11,7 @@ import com.ais.goeuro.service.GoEuroService;
 
 /**
  * GoEuroTest Console version
- *
+ * 
  */
 @SpringBootApplication
 public class App 
@@ -30,11 +30,14 @@ public class App
 	
 	public static void main( String[] args )
     {
-		ConfigurableApplicationContext ctx = SpringApplication.run(App.class, args);
+		// Spring for Dependency Injection
+		SpringApplication app = new SpringApplication(App.class);
+        app.setShowBanner(false);
+        ConfigurableApplicationContext ctx = app.run(args);
 		
 	   	// check that it has arguments, one argument only
     	if (args.length != 1 )
-    		System.out.println("Wrong number of parameters");
+    		System.out.println("Please use one parameter for the location reference.");
     			
     	GoEuroService goEuroService = (GoEuroService) ctx.getBean("goEuroService");
     	

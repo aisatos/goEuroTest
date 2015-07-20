@@ -21,14 +21,17 @@ public class LocationFetchHTTPClient implements LocationFetchService {
 		this.httpClient = client;
 	}
 	
+	/**
+	 * Retrieves a String: a Json object array from the GoEuro service
+	 * @param string the short name of the location the UI is looking the details for
+	 * @throws ClientProtocolException when there's a protocol error
+	 * @throws IOException on connection error
+	 * @throws IllegalArgumentException when string is null or empty.
+	 */
 	public String getLocationDetails(String string) throws ClientProtocolException, IOException {
 		if (string == null || string.length() < 1)
 			throw new IllegalArgumentException("Argument string should be non-empty.");
 		HttpResponse response = callRemoteApi(string);
-		  
-//		if (response.getStatusLine().getStatusCode() != 200) {
-//			throw new IllegalArgumentException("Failed : HTTP error code : " + response.getStatusLine().getStatusCode());
-//		}
 		
 		return getContent(response);
 	}
